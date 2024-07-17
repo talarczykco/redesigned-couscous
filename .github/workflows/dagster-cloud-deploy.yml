@@ -1,5 +1,6 @@
 name: Dagster Cloud Hybrid Deployment
 on:
+  workflow_dispatch: # To trigger from web UI
   push: # For full deployments
     branches:
       - "main"
