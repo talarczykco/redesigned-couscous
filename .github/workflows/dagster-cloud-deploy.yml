@@ -27,6 +27,14 @@ env:
 jobs:
   dagster-cloud-deploy:
     runs-on: ubuntu-20.04
+
+    # https://docs.github.com/en/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions#upgrading-a-workflow-that-accesses-ghcrio
+    permissions:
+      contents: read
+      packages: write
+      attestations: write
+      id-token: write
+
     steps:
       # If this is a closed PR the prerun step closes the branch deployment and returns
       # output.result='skip' which is used to skip other steps in this workflow.
